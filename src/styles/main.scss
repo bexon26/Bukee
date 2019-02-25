@@ -4,54 +4,139 @@
 @import "utils/fonts";
 @import "libs";
 
+$light-color: #fff;
+$accent-color:#65e496;
+
 h1, h2, h3, h4, p {
     padding: 0;
     margin: 0;
 }
 
-code {
-    background: rgba(#000, 0.2);
-    padding: 5px;
-    margin-right: 5px;
-}
-
 body {
-    background: radial-gradient(ellipse at center, #3B414D 0%, #282C34 100%) no-repeat fixed;
-    font-family: "Helvetica", Arial, sans-serif;
-    align-items: center;
-    text-align: center;
-    line-height: 34px;
-    color: #fff;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    display: flex;
-    justify-content: center;
+    font-family: 'Roboto Slab', serif;
+    
 }
 
-.wrapper {
-    width: 850px;
+.wrap {
+    max-width: 1170px;
     margin: 0 auto;
-    padding: 0 40px;
-    &__title {
-        font-size: 24px;
-        margin-bottom: 20px;
+}
+
+.page-main {
+    background-image: url(../img/bg-main.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:$light-color;
+    padding-bottom: 163px;
+    
+    
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1170px;
+    margin: 0 auto;
+    padding-top: 39px;
+    padding-bottom: 162px;
+    &__logo {
+        display: block;
+        padding-top: 6px;
+        width: 137px;
+        height: 28px;
+        background-image: url(../img/logo.svg);
+        background-repeat: no-repeat;
     }
-    &__subtitle {
-        font-size: 18px;
-        margin-bottom: 20px;
-        a {
-            color: cadetblue;
-            font-weight: 600;
-        }
-    }
-    &__icons {
-        max-width: 300px;
-        margin: 60px auto 0;
+    &-list {
+        list-style-type: none;
         display: flex;
-        justify-content: space-between;
-        .icon {
-            height: 70px;
+        justify-content: flex-end;
+        font-family: 'Open Sans', sans-serif;
+        &__item{
+            margin-left: 22px;
+            padding-bottom: 5px;
+            border-bottom: 3px solid transparent;
+            transition: 0.3s;
+            &:hover {
+                border-bottom: 3px solid $accent-color;
+            }
+           
+            
         }
+        &__item.active {
+            border-bottom: 3px solid $accent-color;
+        }
+        &__link {
+            color: $light-color;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+    }
+}
+
+.block-text {
+    flex-basis: calc(93% - 500px); 
+    &__name {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 18px;
+        letter-spacing: 0.9px;
+        margin-bottom: 30px;
+    }
+    &__title {
+        font-size: 48px;
+        font-weight: 700;
+        letter-spacing: 1.8px;
+        margin-bottom: 43px;
+        span {
+            display: block;
+            color: $accent-color;
+            font-size: 18px;
+            margin-top: 11px;
+            letter-spacing: 0.9px;
+
+        }
+    }
+    &__description {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 15px;
+        letter-spacing: 0.75px;
+        line-height: 24px;
+        margin-bottom: 23px
+    }
+
+    &__btn {
+        display: block;
+        background-color: $accent-color;
+        color:$light-color;
+        text-decoration: none;
+        max-width: 250px;
+        border-radius: 3px;
+        text-align: center;
+        margin-top: 47px;
+        margin-bottom: 19px;
+        padding: 15px 0;
+        letter-spacing: 1.6px;
+        
+    }
+    small {
+        font-size: 12px;
+        letter-spacing: 0.1px;
+        font-style: italic;
+        }
+
+}
+
+.block-book {
+    display: flex;
+    justify-content: flex-start;
+    
+    &-demo {
+        display:block;
+        width: 445px;
+        height: 639px;
+        background-image: url(../img/book.svg);
+        background-repeat: no-repeat;
+        flex-basis: 500px;
     }
 }
